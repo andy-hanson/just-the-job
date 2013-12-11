@@ -1,0 +1,17 @@
+{
+	"name":
+		"just-the-job",
+	"version":
+		"0.0.0",
+	"description":
+		"Runs jobs that depend on others. Great for Cakefiles.",
+	"main":
+		"./js/index",
+	"dependencies": {
+		"source-map-support": ">=1.3.11"
+	},
+	"repository":
+		"https://github.com/andy-hanson/just-the-job/",
+	"license":
+		"WTFPL"
+}
