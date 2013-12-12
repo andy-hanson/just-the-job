@@ -1,0 +1,5 @@
+.*
+!.gitIgnore
+!.npmignore
+node_modules
+

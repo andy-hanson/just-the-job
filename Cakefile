@@ -1,17 +1,15 @@
 { exec } = require 'child_process'
 
-execHandle = (after) ->
-	(err, stdout, stderr) ->
+run = (command, after) ->
+	exec command, (err, stdout, stderr) ->
 		out = stdout + stderr
-		if out != ''
-			console.log out
+		console.log out unless out == ''
 		throw err if err?
 		after()
 
-task 'all', 'Description', ->
-	cmd =
-		'coffee --compile --bare --map --output js source'
-	exec cmd, execHandle ->
-		exec 'bin/test', execHandle ->
-			null
-			#console.log 'done'
+task 'all', 'Compile, lint, doc, and run', ->
+	run 'coffee --compile --bare --map --output js source', ->
+		run 'coffeelint -f source/lintConfig.json source/*.coffee', ->
+			run 'coffeedoc --output doc --hide-private source', ->
+				run 'bin/test', ->
+					null

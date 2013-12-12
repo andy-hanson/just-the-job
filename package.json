@@ -6,12 +6,14 @@
 	"description":
 		"Runs jobs that depend on others. Great for Cakefiles.",
 	"main":
-		"./js/index",
+		"js/index",
 	"dependencies": {
-		"source-map-support": ">=1.3.11"
+		"source-map-support": ">=0.2.5"
 	},
 	"repository":
-		"https://github.com/andy-hanson/just-the-job/",
+		"github.com/andy-hanson/just-the-job/",
+	"author":
+		"andy-hanson",
 	"license":
 		"WTFPL"
 }
