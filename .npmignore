@@ -1,5 +1,6 @@
 .*
 !.gitIgnore
 !.npmignore
+doc
 node_modules
 

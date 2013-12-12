@@ -9,7 +9,7 @@ run = (command, after) ->
 
 task 'all', 'Compile, lint, doc, and run', ->
 	run 'coffee --compile --bare --map --output js source', ->
-		run 'coffeelint -f source/lintConfig.json source/*.coffee', ->
+		run 'coffeelint -f source/coffeelint-config.json source/*.coffee', ->
 			run 'coffeedoc --output doc --hide-private source', ->
-				run 'bin/test', ->
+				run 'node js/test', ->
 					null

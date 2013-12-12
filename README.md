@@ -2,22 +2,25 @@ Just The Job is a way to easily write Cake tasks.
 
 Let's look at an example:
 
-	require('just-the-job') ->
-		@job 'say-hi', 'echo hi there'
+```coffeescript
+require('just-the-job') ->
+	@job 'say-hi', 'echo hi there'
 
-		@task 'my-job', ['say-hi'], (after) ->
-			console.log 'just doing my job'
-			after()
-
+	@task 'my-job', ['say-hi'], (after) ->
+		console.log 'just doing my job'
+		after()
+```
 
 The example creates both a job and a cake task.
 The only difference is that tasks show up in the usage when 'cake' is run alone.
 
 They share the same syntax:
 
-	@job 'name', <<'description',>> <<['depends-on-these', ...]>>, run
+```coffeescript
+@job 'name', «'description',» «['depends-on-these', ...]», run
+```
 
-where `<<arg>>` indicates an optional argument.
+where `«arg»` indicates an optional argument.
 
 The description becomes part of cake's usage string.
 The dependencies are an unordered set of jobs that must be run before this one.
@@ -35,4 +38,4 @@ It also has these methods:
 	If `after` is present, the function calls it at the end.
 
 * `@do name, <<after>>`
-	Runs the result of @getRunner.
+	Runs the result of `@getRunner`.
